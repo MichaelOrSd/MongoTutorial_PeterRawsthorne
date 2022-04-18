@@ -102,7 +102,18 @@ router.get('/', async (req, res) => {
             "story": "Universitat de Barcelona"
             }
     ];
-    console.log(results[0].children[0]);
+    // console.log(results[0].children[0]);
+    if (results.length > 0) {
+        results.forEach(parent => {
+            console.log();
+            console.log('FAMILY');
+            console.log(parent.first_name + ' ' + parent.last_name + '/n' + parent.phrase + parent.story)
+            console.log('CHILDREN');
+            parent.children.forEach(child => {
+                console.log(child.name + ' ' + child.gender + ' ' + child.animal);
+            })
+        });
+    }    
     // res.render('search', {results});
 });
 

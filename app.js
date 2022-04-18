@@ -13,9 +13,9 @@ app.get('/', (req, res) => {
     res.render('index', {name: 'Peter'});
 });
 
-// const searchRouter = require('./routes/awards');
+const searchRouter = require('./routes/search');
 
-// app.use('/search', searchRouter);
+app.use('/search', searchRouter);
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
